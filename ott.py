@@ -1,14 +1,56 @@
 import streamlit as st
 import pandas as pd
+import os
 
-# Title of the app
+# Path for the counter file
+counter_file = "counter.txt"
+
+# Initialize counter if it doesn't exist
+if not os.path.exists(counter_file):
+    with open(counter_file, 'w') as f:
+        f.write("0")
+
+# Read the current counter value
+with open(counter_file, 'r') as f:
+    visitor_count = int(f.read().strip())
+
+# Increment the counter
+visitor_count += 1
+
+# Update the counter value in the file
+with open(counter_file, 'w') as f:
+    f.write(str(visitor_count))
+
+# Title of the app with responsive styling
 st.markdown(
     """
     <style>
     .main {background-color: #f0f2f6;}
     .sidebar .sidebar-content {background-color: #14213d; color: white;}
     h1 {color: #e63946;}
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
+        .sidebar .sidebar-content {
+            font-size: 14px;
+        }
+        .main {
+            padding: 0 15px;
+        }
+    }
     </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Display visitor count
+st.markdown(
+    f"""
+    <div style="background-color:#14213d; color:white; padding:10px; border-radius:5px; text-align:center;">
+        <h2 style="font-size: 20px;">Welcome to OTT Subscription Plans</h2>
+        <p style="font-size:16px;">Number of visitors: <strong>{visitor_count}</strong></p>
+    </div>
     """,
     unsafe_allow_html=True
 )
@@ -17,8 +59,8 @@ st.markdown(
 st.markdown(
     """
     <div style="background-color:#14213d; color:white; padding:10px; border-radius:5px;">
-        <h1 style="text-align:center;">OTT Subscription Plans</h1>
-        <p style="text-align:center; font-size:14px;">
+        <h1 style="text-align:center; font-size: 28px;">OTT Subscription Plans</h1>
+        <p style="text-align:center; font-size:16px;">
             Contact us at <strong>+91-1234567890</strong> or email: 
             <a href="mailto:support@ottplans.com" style="color:lightblue;">support@ottplans.com</a>
         </p>
@@ -67,9 +109,7 @@ else:
     if device_filter == "1 Device":
         filtered_df = filtered_df[["Platform", "Monthly", "3 Months", "6 Months", "12 Months"]]
     else:
-        filtered_df = filtered_df[
-            ["Platform", "Monthly (2 Devices)", "3 Months (2 Devices)", "6 Months (2 Devices)", "12 Months (2 Devices)"]
-        ]
+        filtered_df = filtered_df[["Platform", "Monthly (2 Devices)", "3 Months (2 Devices)", "6 Months (2 Devices)", "12 Months (2 Devices)"]]
 
 # Rename columns for clarity
 filtered_df.columns = filtered_df.columns.str.replace(r" \(2 Devices\)", "")
@@ -104,5 +144,3 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
