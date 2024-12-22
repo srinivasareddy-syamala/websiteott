@@ -24,9 +24,23 @@ with open(counter_file, 'w') as f:
 # Streamlit native theming for modern UI
 st.set_page_config(page_title="OTT Subscription Plans", layout="wide")
 
-# Header section
+# WhatsApp chat link
+whatsapp_number = "+9163256467"
+whatsapp_link = f"https://wa.me/{whatsapp_number[1:]}"
+
+# Header section with WhatsApp link
 st.title("OTT Subscription Plans")
-st.caption("Contact us at **+91-9963256467**")
+st.markdown(
+    f"""
+    <p style="font-size:16px;">
+        Contact us at <strong>{whatsapp_number}</strong> 
+        <a href="{whatsapp_link}" target="_blank" style="text-decoration:none;">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" style="vertical-align:middle; margin-left:8px;">
+        </a>
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(f"**Number of visitors:** {visitor_count}")
 
 # OTT plans data
@@ -77,6 +91,16 @@ st.dataframe(filtered_df.style.set_table_styles([
     {'selector': 'td', 'props': [('font-family', 'Roboto, sans-serif'), ('font-size', '12px')]},
 ]))
 
-# Footer section
+# Footer section with WhatsApp link
 st.markdown("---")
-st.caption("For more details, call us at **+91-9963256467**")
+st.markdown(
+    f"""
+    <p style="font-size:14px; text-align:center;">
+        For more details, call us at <strong>{whatsapp_number}</strong> 
+        <a href="{whatsapp_link}" target="_blank" style="text-decoration:none;">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" style="vertical-align:middle; margin-left:8px;">
+        </a>
+    </p>
+    """,
+    unsafe_allow_html=True
+)
