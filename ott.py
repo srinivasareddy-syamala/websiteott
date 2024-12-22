@@ -138,8 +138,8 @@ st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
 st.markdown(
     """
     <div style="background-color:#14213d; color:white; padding:10px; border-radius:5px; text-align:center; margin-top:20px;">
-        <p style="font-size:14px;">For more information, call us at <strong>+91-1234567890</strong> or email: 
-        <a href="mailto:support@ottplans.com" style="color:lightblue;">support@ottplans.com</a></p>
+        <p style="font-size:14px;">For more information, call us at <strong>+91-9963256467</strong> 
+        </p>
     </div>
     """,
     unsafe_allow_html=True
