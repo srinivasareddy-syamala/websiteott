@@ -25,7 +25,7 @@ with open(counter_file, 'w') as f:
 st.set_page_config(page_title="OTT Subscription Plans", layout="wide")
 
 # WhatsApp chat link
-whatsapp_number = "+9163256467"
+whatsapp_number = "+91 9963256467"
 whatsapp_link = f"https://wa.me/{whatsapp_number[1:]}"
 
 # Header section with WhatsApp link
