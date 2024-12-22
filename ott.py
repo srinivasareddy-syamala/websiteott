@@ -71,7 +71,7 @@ st.markdown(
 
 # OTT plans data
 ott_data = [
-    {"Platform": "Netflix", "Monthly": 499, "3 Months": 1497, "6 Months": 2994, "12 Months": 5988},
+    {"Platform": "Netflix", "Monthly": 100, "3 Months": 200, "6 Months": 300, "12 Months": 700},
     {"Platform": "Amazon Prime Video", "Monthly": 249, "3 Months": 747, "6 Months": 1494, "12 Months": 2988},
     {"Platform": "Disney+", "Monthly": 399, "3 Months": 1197, "6 Months": 2394, "12 Months": 4788},
     {"Platform": "Hulu", "Monthly": 349, "3 Months": 1047, "6 Months": 2094, "12 Months": 4188},
