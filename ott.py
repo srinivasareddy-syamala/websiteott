@@ -60,10 +60,10 @@ st.markdown(
     """
     <div style="background-color:#14213d; color:white; padding:10px; border-radius:5px;">
         <h1 style="text-align:center; font-size: 28px;">OTT Subscription Plans</h1>
-        <h1 style="text-align:center; font-size:16px;">
+        <div style="text-align:center; font-size:16px;">
             Contact us at <strong>+91-9963256467</strong>
            
-        </h1>
+        </div>
     </div>
     """,
     unsafe_allow_html=True
